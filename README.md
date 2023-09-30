@@ -7,7 +7,7 @@ desafio de codigo proposto no bootcamp dio innovation
 
 
 classDiagram
-  interface Iphone {
+  class Iphone {
     + Conta de Usuarios
     + Musica
     + Telefone
@@ -18,7 +18,7 @@ classDiagram
     - email: String
     - numero: String
     - operadora: String
-    - identificador: String
+    
   }
 
   class Musica {
@@ -39,12 +39,10 @@ classDiagram
     + AtualizarPagina()
   }
 
-  Iphone --|> Conta_de_Usuarios
-  Iphone --|> Musica
-  Iphone --|> Telefone
-  Iphone --|> Internet
-
-classDiagram
+  Iphone "1" *-- "N" Conta_de_Usuarios
+  Iphone "1" *-- "N" Musica
+  Iphone "1" *-- "N" Telefone
+  Iphone "1" *-- "N" Internet
 
 
 ```
